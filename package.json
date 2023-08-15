@@ -1,0 +1,39 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "ssr:build": "vite build && vite build --ssr"
+    },
+    "devDependencies": {
+        "@inertiajs/react": "^1.0.9",
+        "@tailwindcss/typography": "^0.5.9",
+        "@vitejs/plugin-react": "^4.0.4",
+        "autoprefixer": "^10.4.14",
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.5",
+        "postcss": "^8.4.27",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.3.3",
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "html-react-parser": "^4.2.1",
+        "rehype-autolink-headings": "^6.1.1",
+        "rehype-format": "^4.0.1",
+        "rehype-parse": "^8.0.4",
+        "rehype-slug": "^5.1.0",
+        "rehype-stringify": "^9.0.3",
+        "remark": "^14.0.3",
+        "remark-breaks": "^3.0.3",
+        "remark-frontmatter": "^4.0.1",
+        "remark-html": "^15.0.2",
+        "remark-mdx": "^2.3.0",
+        "remark-parse-frontmatter": "^1.0.3",
+        "remark-rehype": "^10.1.0",
+        "remark-toc": "^8.0.1",
+        "remark-torchlight": "^0.0.5"
+    }
+}

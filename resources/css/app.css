@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.line-number {
+  @apply pr-4 !text-gray-400
+}
+
+.summary-hide-when-open {
+  @apply !text-gray-400
+}
