@@ -38,7 +38,7 @@ return [
 
         'resources' => [
             'driver' => 'local',
-            'root' => resource_path('markdown')
+            'root' => resource_path('/')
         ],
 
         'public' => [

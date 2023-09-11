@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Inertia\Inertia;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Storage;
@@ -32,28 +31,29 @@ class HomeController extends Controller
         $posts = $this->getPosts();
         $postIndex = $posts->where('slug', $slug)->keys()->first();
 
-        $nextPost = $posts->get($postIndex + 1) ?? null;
-        $prevPost = $posts->get($postIndex - 1) ?? null;
+        $prevPost = $posts->get($postIndex + 1) ?? null;
+        $nextPost = $posts->get($postIndex - 1) ?? null;
 
-        if(Storage::disk('resources')->exists($slug.'.md')) {
-            $markdown = Storage::disk('resources')->get($slug.'.md');
-            
-            $content = $this->convertMarkdown($markdown);
+        $markdownFile = sprintf('markdown/%s.md', $slug);
 
-            return Inertia::render('Post', [
-                'static' => $this->isStatic(),
-                'content' => $content,
-                'nextPost' => $nextPost,
-                'prevPost' => $prevPost, 
-            ]);
+        if(!Storage::disk('resources')->exists($markdownFile)) {
+            return to_route('not-found');
         }
 
-        return Inertia::render('NotFound');
+        $markdown = Storage::disk('resources')->get($markdownFile);
+        $content = $this->convertMarkdown($markdown);
+
+        return Inertia::render('Article', [
+            'static' => $this->isStatic(),
+            'content' => $content,
+            'nextPost' => $nextPost,
+            'prevPost' => $prevPost, 
+        ]);
     }
 
     protected function getPosts()
     {
-        $fileContent = Storage::disk('resources')->get('posts.json');
+        $fileContent = Storage::disk('resources')->get('json/posts.json');
         return collect(json_decode($fileContent));
     }
 

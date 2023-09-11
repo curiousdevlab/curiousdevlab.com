@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 return [
 
+    'page' => env('PAGE_CACHE', true),
+
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store

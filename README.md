@@ -1,66 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Curious Dev Lab
+Learn. Code. Write.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Run The Project
+This site is built with React, Inertia, Laravel and Tailwind CSS. 
 
-## About Laravel
+To run the project, you need to have PHP, Composer, NVM installed on your machine. Then, follow these steps:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Clone the project. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+git clone repo-https-link
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Move into project directory. 
 
-## Learning Laravel
+```bash
+cd curiousdevlab
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Install php dependencies.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Switch to the projects node version. 
 
-## Laravel Sponsors
+```bash
+nvm use
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Install node dependencies.
 
-### Premium Partners
+```bash
+npm install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Set up the environment file.
 
-## Contributing
+```bash
+cp .env.example .env
+php artisan key:generate
+# nano .env
+# Add database credentials
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Build the front-end assets for development
 
-## Code of Conduct
+```bash
+npm run dev
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Host the project on a local server.
 
-## Security Vulnerabilities
+```bash
+valet links # check if curiousdevlab.test is available
+# if not run the below command in projects root
+valet link 
+valet open
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Start coding away!
 
-## License
+### SSR Mode
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run the project in SSR mode.
+
+```bash
+npm run ssr:build
+php artisan inertia:start-ssr
+```
+
+## Inertia Custom Build
+This project currently has a custom build of inertia. The build is located in `resources/js/inertiajsflow`.
+
+I manually copy the built files to this folder to use in the project.
+
+If you want to customize the build. Check out this project (provide link later).
+
+## Caching
+Disabled for now.
+This project uses the `spatie/laravel-responsecache` package to cache responses. All cache is stored in `public/page-cache`.
+
+The cache doesn't work as expected in dev mode, because we need an updated nginx config to server static pages and currently I can't do that with valet. The inertia cache works as expected in dev mode. Pages are cached in the client browser.
+
+The inertia custom build and the responsecache package work together to create json and html cache files to reduce the server load.
+Request rarely hit laravel. Nginx just serves up the static cache files. 
+
+With this setup, the server can handle about 1K request per second on a $5 Linode server, maybe even more. I made 600K request in 10 minutes with no issues.
+
+## Commands
+
+Clear cached files.
+
+```bash
+# Clear all
+php artisan page-cache:clear
+
+# Clear 1 url
+php artisan page-cache:clear urlPath
+
+```
+Or manually delete the files or folder to achieve the same result.
+
+---
+
+Server Monitoring
+Check `config/server-monitor.php` for more info.
+
+```bash
+php artisan servermonitor:check
+```
+
+## Scripts
+
+### How to run scripts
+From the root directory run the following
+
+```bash
+# first time deploy use
+./scripts/deploy.mjs --firstRun
+# deploy
+./scripts/deploy.mjs
+```

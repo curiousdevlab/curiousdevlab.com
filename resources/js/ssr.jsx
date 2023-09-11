@@ -1,6 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
-import { createInertiaApp } from './inertiajsflow/react/index.esm.js';
-import createServer from './inertiajsflow/react/server.esm.js';
+import { createInertiaApp } from '@inertiajs/react';
+//import createServer from './inertiajsflow/react/server.esm.js';
+import createServer from '@inertiajs/react/server';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import route from '../../vendor/tightenco/ziggy/dist/index.m';
 

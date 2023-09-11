@@ -20,7 +20,7 @@ const Note = ({ title, children })  => {
           <span className="ml-2 text-sm font-semibold">{ title ?? 'Note'}</span>
         </div>
       </div>
-      <div className="px-4 py-6">{children}</div>
+      <div className="px-4 py-1 react-note-block">{children}</div>
     </div>
   );
 }

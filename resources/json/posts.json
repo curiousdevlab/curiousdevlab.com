@@ -1,0 +1,138 @@
+[
+  {
+    "title": "Using Laravel Eloquent Models",
+    "description": "This is an example post with code and other stuff",
+    "slug": "using-laravel-eloquent-models",
+    "date": "2023-08-29 10:00:00",
+    "categories": [
+      "Laravel"
+    ]
+  },
+  {
+    "title": "Connect Laravel to a Remote Database",
+    "description": "This is an example post with code and other stuff",
+    "slug": "connect-laravel-a-remote-database",
+    "date": "2023-08-28 10:00:00",
+    "categories": [
+      "Laravel"
+    ]
+  },
+  {
+    "title": "Under the Hood: How do Laravel Migration Commands Work",
+    "description": "",
+    "slug": "under-the-hood-how-do-laravel-migration-commands-work",
+    "date": "2023-08-27 10:00:00",
+    "categories": [
+      "Laravel"
+    ],
+    "tags": [
+      "Under the Hood",
+      "Migrations"
+    ]
+  },
+  {
+    "title": "Laravel Migration Cheat Sheet",
+    "description": "This is a collection of tips and notes on Laravel’s migration service.",
+    "slug": "laravel-migration-cheat-sheet",
+    "date": "2023-08-26 10:00:00",
+    "categories": [
+      "Laravel"
+    ],
+    "tags": [
+      "Cheat sheet",
+      "Migrations"
+    ]
+  },
+  {
+    "title": "Sending Emails Using Laravel",
+    "description": "Sending emails with Laravel is quick and easy. Laravel comes with mailing features out of the box.",
+    "slug": "sending-emails-using-laravel",
+    "date": "2023-08-25 10:00:00",
+    "categories": [
+      "Laravel"
+    ]
+  },
+  {
+    "title": "What’s the Difference Between Laravel Authentication, Laravel Sanctum, Laravel Fortify, Laravel Breeze,  and Laravel Jetstream ?",
+    "description": "Why are there so many packages or ways to do authentication in Laravel?",
+    "slug": "whats-the-difference-between-laravel-authentication-laravel-sanctum-laravel-fortify-laravel-breeze-and-laravel-jetstream",
+    "date": "2023-08-24 10:00:00",
+    "categories": [
+      "Laravel"
+    ],
+    "tags": []
+  },
+  {
+    "title": "What are Laravel migrations and how to use them?",
+    "description": "Migrations is a Laravel feature that keeps track of database updates and allows you to run and undo the updates as you like.",
+    "slug": "what-are-laravel-migrations-and-how-to-use-them",
+    "date": "2023-08-23 10:00:00",
+    "categories": [
+      "Laravel"
+    ],
+    "tags": [
+      "Migrations"
+    ]
+  },
+  {
+    "title": "How to Install and Switch Between Multiple php Versions",
+    "description": "I need to use and switch between multiple php version on the same machine.",
+    "slug": "how-to-install-and-switch-between-multiple-php-versions",
+    "date": "2023-08-22 10:00:00",
+    "categories": [
+      "PHP"
+    ]
+  },
+  {
+    "title": "Introduction to Installing and Getting Started with Laravel",
+    "description": "Laravel is the most popular php framework that helps developers build applications very quickly.",
+    "slug": "introduction-to-installing-and-getting-started-with-laravel",
+    "date": "2023-08-21 10:00:00",
+    "categories": [
+      "Laravel"
+    ],
+    "tags": [
+      "Getting started"
+    ]
+  },
+  {
+    "title": "How to Fix DBeaver Importing Issue: Native Client is Not Specified for Connection",
+    "description": "When importing data for the first time into DBeaver, I usually get stuck with an error and can’t import anything. Let's fix it!",
+    "slug": "how-to-fix-dbeaver-importing-issue-native-client-is-not-specified-for-connection",
+    "date": "2023-08-20 19:00:00",
+    "categories": [
+      "Database"
+    ]
+  },
+  {
+    "title": "Introduction to the Scripting Npm Package Zx",
+    "description": "Zx is a package created by google with the goal to make creating scripts with javascript easier.",
+    "slug": "introduction-to-the-scripting-npm-package-zx",
+    "date": "2023-08-19 10:00:00",
+    "categories": [
+      "Node.js"
+    ],
+    "tags": [
+      "Getting started",
+      "Npm package"
+    ]
+  },
+  {
+    "title": "Slice vs Substring: Which Javascript Function is Faster?",
+    "description": "Even though these functions give the same results, they work differently. Let’s go over how these functions work differently.",
+    "slug": "slice-vs-substring-which-javascript-function-is-faster",
+    "date": "2023-08-18 19:00:00",
+    "categories": [
+      "Javascript"
+    ]
+  },
+  {
+    "title": "How to Use the Slice Function in Javascript",
+    "description": "The slice function is a string extracting function. It is used to get a piece of a string. The slice function is very similar to the substr function with a few differences.",
+    "slug": "how-to-use-the-slice-function-in-javascript",
+    "date": "2023-08-17 19:00:00",
+    "categories": [
+      "Javascript"
+    ]
+  }
+]

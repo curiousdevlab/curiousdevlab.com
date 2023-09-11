@@ -3172,7 +3172,7 @@ d$1(
     page,
     render: ReactDOMServer.renderToString,
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, /* @__PURE__ */ Object.assign({ "./Pages/Article.jsx": () => import("./assets/Article-3ed6f9aa.js"), "./Pages/Home.jsx": () => import("./assets/Home-2ad8bcdb.js"), "./Pages/NotFound.jsx": () => import("./assets/NotFound-23ad939b.js"), "./Pages/Post.jsx": () => import("./assets/Post-e6d0b1f9.js") })),
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, /* @__PURE__ */ Object.assign({ "./Pages/Article.jsx": () => import("./assets/Article-39737a04.js"), "./Pages/Home.jsx": () => import("./assets/Home-82065641.js"), "./Pages/NotFound.jsx": () => import("./assets/NotFound-b495552a.js") })),
     setup: ({ App, props }) => {
       global.route = (name, params, absolute) => I(name, params, absolute, {
         ...page.props.ziggy,

@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/not-found', function () {
+    return inertia('NotFound');
+})
+    ->middleware('page-cache')
+    ->name('not-found');
+    
 Route::get('/{home}', [HomeController::class, 'index'])->name('home')
     ->where('home', '(|__static__)')
     ->middleware('page-cache');

@@ -23,7 +23,6 @@ async function main() {
         //cache: 'cache',
         torchlightAnnotations: true,
         lineNumbers: true,
-        diffIndicators: true,
       },
     })
     .use(remarkRehype, { allowDangerousHtml: true })
@@ -31,8 +30,6 @@ async function main() {
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: "wrap" })
     .process(process.argv[2]);
-
-  //console.log(content.toString());
 
   console.log(JSON.stringify(content));
 }

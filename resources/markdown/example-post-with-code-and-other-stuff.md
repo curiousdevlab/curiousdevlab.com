@@ -3,7 +3,9 @@ title: Example Post with Code and Other Stuff
 description: This is an example post with code and other stuff
 slug: example-post-with-code-and-other-stuff
 date: 2023-08-13 10:00:00
-tags: [Laravel, Example]
+categories: [Laravel]
+tags: [example]
+dev: true
 ---
 
 ## Table of contents
@@ -25,7 +27,9 @@ Nam elementum, elit et blandit sollicitudin, elit mi condimentum nisl, quis faci
 Sed a dignissim ante, at sollicitudin magna. Nulla eget orci vitae augue fermentum ultricies. Praesent gravida massa neque, quis condimentum est sagittis a. Duis tincidunt scelerisque orci, sed porta sem iaculis id. Donec pulvinar eu ipsum sit amet auctor.
 
 <div class="react-note-block" data-title="Point">
+
   This is an important block. Pay attention
+  
 </div>
 
 ## How to use

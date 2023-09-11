@@ -11,4 +11,20 @@ export default defineConfig({
         }),
         react(),
     ],
+    /*build: {
+      chunkSizeWarningLimit: 200,
+      rollupOptions: {
+          output:{
+              manualChunks(id) {
+                console.log('chunk', id, "\n");
+                if (id.includes('ComponentBlocks')) {
+                  return id.toString().split('ComponentBlocks/')[1].toString();
+                }
+                /* if (id.includes('node_modules')) {
+                    return id.toString().split('node_modules/')[1].split('/')[0].toString();
+                } */
+          /* }
+          }
+      }
+  }*/
 });

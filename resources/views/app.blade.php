@@ -16,7 +16,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
     <link rel="shortcut icon" href="/favicons/favicon.ico">
     <link rel="manifest" href="/favicons/site.webmanifest">
-
     {{--<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">--}}
 
     {{--  @php 

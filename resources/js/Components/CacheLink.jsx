@@ -1,11 +1,13 @@
-import { Link, router } from '../inertiajsflow/react/index.esm.js';
+import { Link, router } from '@inertiajs/react';
 import { useEffect } from 'react';
 
 const CacheLink = ({ children, isStatic, ...props }) => {
   const staticPage = isStatic ?? false;
 
   useEffect(() => {
-    router.cache().prefetch(props.href, { durationInMinutes: 5, isStatic: staticPage  })
+    setTimeout(() => {
+      router.cache().prefetch(props.href, { durationInMinutes: 5, isStatic: staticPage  })
+    }, [500]);
   }, [])
 
   return <Link isStatic={staticPage} {...props}>{children}</Link>;
