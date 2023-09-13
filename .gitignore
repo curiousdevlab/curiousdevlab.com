@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 /public/page-cache
 /storage/servermonitor.cache
+/bootstrap/ssr
