@@ -185,4 +185,7 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+
+    'nodePath' => env('NODE_PATH', '/usr/local/bin/node'),
+
 ];

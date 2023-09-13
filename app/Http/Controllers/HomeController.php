@@ -59,7 +59,7 @@ class HomeController extends Controller
 
     protected function convertMarkdown(string $markdown)
     {
-        $result = Process::run([env('NODE_PATH'), base_path('markdownConverter.js'), $markdown]);
+        $result = Process::run([config('app.nodePath'), base_path('markdownConverter.js'), $markdown]);
         $output = $result->output();
 
         if ($result->successful()) {
