@@ -1,8 +1,8 @@
 import { Link, router } from '@inertiajs/react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const CacheLink = ({ children, isStatic, ...props }) => {
-  const staticPage = isStatic ?? false;
+  /* const staticPage = isStatic ?? false;
 
   useEffect(() => {
     setTimeout(() => {
@@ -10,7 +10,9 @@ const CacheLink = ({ children, isStatic, ...props }) => {
     }, [500]);
   }, [])
 
-  return <Link isStatic={staticPage} {...props}>{children}</Link>;
+  return <Link isStatic={staticPage} {...props}>{children}</Link>; */
+
+  return <Link {...props}>{children}</Link>;
 }
 
 export default CacheLink;

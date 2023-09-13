@@ -2,13 +2,14 @@
 title: How to Use the Slice Function in Javascript
 description: The slice function is a string extracting function. It is used to get a piece of a string. The slice function is very similar to the substr function with a few differences.
 slug: how-to-use-the-slice-function-in-javascript
-date: 2023-08-17 19:00:00
+date: 2023-09-11 10:00:00
 categories: [Javascript]
+published_at: 2023-09-11 10:00:00
 ---
 
 ## Table of contents
 
-## Intro
+## Introduction
 
 When working with strings, I tend to think of the slice function. However, I  stay away from the function and use the substring function instead.
 

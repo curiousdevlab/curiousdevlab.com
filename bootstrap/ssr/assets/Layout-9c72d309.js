@@ -1,5 +1,5 @@
 import { jsx, Fragment, jsxs } from "react/jsx-runtime";
-import { L as Lo, n as nl, O as Op } from "../ssr.js";
+import { Head } from "@inertiajs/react";
 const Footer = ({ children, ...props }) => {
   return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsxs("footer", { className: "max-w-4xl m-auto px-4 py-10", children: [
     /* @__PURE__ */ jsx("div", { className: "fixed bottom-8 right-10", children: /* @__PURE__ */ jsxs(
@@ -48,9 +48,8 @@ const Footer = ({ children, ...props }) => {
   ] }) });
 };
 function Layout({ children, hideFooter }) {
-  const { production } = Lo().props;
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs(nl, { children: [
+    /* @__PURE__ */ jsxs(Head, { children: [
       /* @__PURE__ */ jsx("title", { children: "Articles" }),
       /* @__PURE__ */ jsx(
         "meta",
@@ -79,19 +78,7 @@ function Layout({ children, hideFooter }) {
     ] }),
     /* @__PURE__ */ jsxs("div", { id: "top", className: "font-sans bg-[#0f141b] text-white text-sm font-normal leading-relaxed antialiased min-h-screen w-full", children: [
       /* @__PURE__ */ jsxs("main", { children: [
-        !production ? /* @__PURE__ */ jsxs("div", { className: "fixed top-5 right-5", children: [
-          /* @__PURE__ */ jsx("button", { type: "button", className: "mb-2 hover:opacity-90 bg-gray-900 border rounded-md border-gray-700 px-3 py-2", onClick: () => {
-            Op.cache().removeAll();
-          }, children: "Clear Cache" }),
-          /* @__PURE__ */ jsxs("div", { className: "bg-gray-900 border border-gray-700 px-3 py-2 rounded", children: [
-            /* @__PURE__ */ jsx("p", { className: "block sm:hidden md:hidden lg:hidden xl:hidden 2xl:hidden", children: "@xs" }),
-            /* @__PURE__ */ jsx("p", { className: "hidden sm:block md:hidden lg:hidden xl:hidden 2xl:hidden", children: "@sm" }),
-            /* @__PURE__ */ jsx("p", { className: "hidden sm:hidden md:block lg:hidden xl:hidden 2xl:hidden", children: "@md" }),
-            /* @__PURE__ */ jsx("p", { className: "hidden sm:hidden md:hidden lg:block xl:hidden 2xl:hidden", children: "@lg" }),
-            /* @__PURE__ */ jsx("p", { className: "hidden sm:hidden md:hidden lg:hidden xl:block 2xl:hidden", children: "@xl" }),
-            /* @__PURE__ */ jsx("p", { className: "hidden sm:hidden md:hidden lg:hidden xl:hidden 2xl:block", children: "@2xl" })
-          ] })
-        ] }) : null,
+        null,
         children
       ] }),
       !hideFooter ? /* @__PURE__ */ jsx(Footer, {}) : null

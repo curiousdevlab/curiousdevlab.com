@@ -1,17 +1,8 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
-import { L as Lo, n as nl, O as Op, s as sl } from "../ssr.js";
-import { L as Layout } from "./Layout-64d8c8c7.js";
-import { C as CacheLink } from "./CacheLink-6abf4a74.js";
+import { usePage, Head, router, Link } from "@inertiajs/react";
+import { L as Layout } from "./Layout-9c72d309.js";
+import { C as CacheLink } from "./CacheLink-e7404a8b.js";
 import parse, { domToReact } from "html-react-parser";
-import { H as HeroTwo } from "./HeroTwo.jsx-8f45fa44.js";
-import { H as HeroOne } from "./HeroOne.jsx-c1697ca8.js";
-import { H as HeroThree } from "./HeroThree.jsx-3c5bbcef.js";
-import { H as HeroFour } from "./HeroFour.jsx-163f0f22.js";
-import "react-dom/server";
-import "react";
-import "lodash.isequal";
-import "http";
-import "process";
 const Note = ({ title, children }) => {
   return /* @__PURE__ */ jsxs("div", { className: "border-2 rounded-md w-full min-w-0 px-2 md:px-2 max-w-prose sm:max-w-none pb-[12px] border-yellow-500 my-12", children: [
     /* @__PURE__ */ jsx("div", { className: "flex text-yellow-500 -mt-4", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-row items-center px-4 bg-[#0f1218] rounded-full", children: [
@@ -40,7 +31,7 @@ const Note = ({ title, children }) => {
   ] });
 };
 const Post = ({ content, nextPost, prevPost }) => {
-  const { baseUrl } = Lo().props;
+  const { baseUrl } = usePage().props;
   const { data } = content;
   const { frontmatter: frontMatter } = data;
   const options = {
@@ -58,7 +49,7 @@ const Post = ({ content, nextPost, prevPost }) => {
   };
   const updatedContent = parse(content.value, options);
   return /* @__PURE__ */ jsxs(Fragment, { children: [
-    /* @__PURE__ */ jsxs(nl, { children: [
+    /* @__PURE__ */ jsxs(Head, { children: [
       /* @__PURE__ */ jsx("title", { children: frontMatter.title }),
       /* @__PURE__ */ jsx(
         "meta",
@@ -102,10 +93,6 @@ const Post = ({ content, nextPost, prevPost }) => {
         }
       )
     ] }),
-    /* @__PURE__ */ jsx(HeroOne, {}),
-    /* @__PURE__ */ jsx(HeroTwo, {}),
-    /* @__PURE__ */ jsx(HeroThree, {}),
-    /* @__PURE__ */ jsx(HeroFour, {}),
     /* @__PURE__ */ jsx("div", { className: "max-w-6xl m-auto mb-20 px-4", children: /* @__PURE__ */ jsx("div", { className: "flex justify-center pt-10", children: /* @__PURE__ */ jsx(
       CacheLink,
       {
@@ -156,11 +143,11 @@ const Post = ({ content, nextPost, prevPost }) => {
         {
           className: "py-6 w-full lg:w-1/2 border px-5 border-yellow-500 rounded-md",
           onMouseEnter: () => {
-            Op.cache().prefetch(prevPost.slug);
+            router.cache().prefetch(prevPost.slug);
           },
           children: [
             /* @__PURE__ */ jsx("p", { className: "pb-2 text-gray-400 font-semibold", children: "Previous Article" }),
-            /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold", children: /* @__PURE__ */ jsx(sl, { href: prevPost.slug, className: "hover:underline", children: prevPost.title }) })
+            /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold", children: /* @__PURE__ */ jsx(Link, { href: prevPost.slug, className: "hover:underline", children: prevPost.title }) })
           ]
         }
       ) : null,
@@ -169,11 +156,11 @@ const Post = ({ content, nextPost, prevPost }) => {
         {
           className: "ml-auto w-full lg:w-1/2 py-6 border px-5 border-yellow-500 rounded-md",
           onMouseEnter: () => {
-            Op.cache().prefetch(nextPost.slug);
+            router.cache().prefetch(nextPost.slug);
           },
           children: [
             /* @__PURE__ */ jsx("p", { className: "pb-2 text-gray-400 text-right font-semibold", children: "Next Article" }),
-            /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold text-right", children: /* @__PURE__ */ jsx(sl, { href: nextPost.slug, className: "hover:underline", children: nextPost.title }) })
+            /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold text-right", children: /* @__PURE__ */ jsx(Link, { href: nextPost.slug, className: "hover:underline", children: nextPost.title }) })
           ]
         }
       ) : null,

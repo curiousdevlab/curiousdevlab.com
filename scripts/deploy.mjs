@@ -37,14 +37,12 @@ composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev`
 if (firstRun) {
   await $`chmod -R 775 storage && \
   chmod -R 755 bootstrap/cache && \
-  php artisan key:generate && \
-  php artisan migrate`;
+  `;
 }
 
 await $`php artisan config:cache && \
 php artisan view:cache && \
 php artisan route:cache && \
-nvm use && \
 npm install && \
 npm run ssr:build`;
 

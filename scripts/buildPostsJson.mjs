@@ -40,8 +40,10 @@ let allPosts = files.map(function (file) {
   return new Date(b.date) - new Date(a.date);
 })
 .filter(post => {
-  const production = !dev ? post.dev !== true : true;
-  return production && new Date(post.date) <= currentDate;
+  if (!dev) {
+    return !post.dev && new Date(post.date) <= currentDate && new Date(post.published_at) <= currentDate
+  }
+  return true;
 });
 
 

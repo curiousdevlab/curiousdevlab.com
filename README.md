@@ -123,3 +123,12 @@ From the root directory run the following
 # deploy
 ./scripts/deploy.mjs
 ```
+
+Build post listing
+```bash
+# prod listing
+./scripts/buildPostsJson.mjs
+
+# dev listing
+./scripts/buildPostsJson.mjs --dev
+```

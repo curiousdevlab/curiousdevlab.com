@@ -16,8 +16,7 @@ class CacheResponse extends BaseCacheResponse
      * @return bool
      */
     protected function shouldCache(Request $request, Response $response) :bool
-    {
-        
+    {   
         if ($request->getQueryString() || config('cache.page')) {
             return false;
         }
