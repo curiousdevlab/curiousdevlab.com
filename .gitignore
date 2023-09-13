@@ -20,3 +20,4 @@ yarn-error.log
 /public/page-cache
 /storage/servermonitor.cache
 /bootstrap/ssr
+/resources/static_posts

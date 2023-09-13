@@ -118,6 +118,11 @@ php artisan servermonitor:check
 From the root directory run the following
 
 ```bash
+git pull origin main
+nvm use && nvm install
+
+# then run
+
 # first time deploy use
 ./scripts/deploy.mjs --firstRun
 # deploy

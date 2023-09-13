@@ -34,18 +34,25 @@ class HomeController extends Controller
         $prevPost = $posts->get($postIndex + 1) ?? null;
         $nextPost = $posts->get($postIndex - 1) ?? null;
 
-        $markdownFile = sprintf('markdown/%s.md', $slug);
+        $content = Storage::disk('resources')->get(sprintf('static_posts/%s.json', $slug)) ?? null;
 
-        if(!Storage::disk('resources')->exists($markdownFile)) {
-            return to_route('not-found');
+        if (!$content) {
+
+            $markdownFile = sprintf('markdown/%s.md', $slug);
+
+            if(!Storage::disk('resources')->exists($markdownFile)) {
+                return to_route('not-found');
+            }
+
+            $markdown = Storage::disk('resources')->get($markdownFile);
+
+            $content = $this->convertMarkdown($markdown);
+            Storage::disk('resources')->put(sprintf('static_posts/%s.json', $slug), $content);
         }
-
-        $markdown = Storage::disk('resources')->get($markdownFile);
-        $content = $this->convertMarkdown($markdown);
 
         return Inertia::render('Article', [
             'static' => $this->isStatic(),
-            'content' => $content,
+            'content' => json_decode($content),
             'nextPost' => $nextPost,
             'prevPost' => $prevPost, 
         ]);
@@ -63,7 +70,7 @@ class HomeController extends Controller
         $output = $result->output();
 
         if ($result->successful()) {
-            return json_decode($output);
+            return $output;
         } else {
             throw new \Exception($result->errorOutput());
         }
