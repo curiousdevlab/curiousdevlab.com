@@ -67,7 +67,5 @@ class HomeController extends Controller
         } else {
             throw new \Exception($result->errorOutput());
         }
-
-        dd(json_decode($output));
     }
 }

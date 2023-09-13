@@ -25,16 +25,11 @@ async function monitorPass() {
   }
 }
 
-const { firstRun } = argv;
-
-monitorPass();
-
 // git pull and composer install
-await $`git pull origin main && \
-composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev`
+await $`composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev`
 
 // If running for the first time, change folder permissions, generate key, and run migrations
-if (firstRun) {
+if (argv.firstRun) {
   await $`chmod -R 775 storage && \
   chmod -R 755 bootstrap/cache && \
   `;
@@ -45,6 +40,8 @@ php artisan view:cache && \
 php artisan route:cache && \
 npm install && \
 npm run ssr:build`;
+
+monitorPass();
 
 echo(chalk.bgGreen.black.bold("🚀 Application deployed!"))
 
